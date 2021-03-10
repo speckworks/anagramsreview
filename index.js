@@ -10,16 +10,16 @@
 
 function anagrams(stringA, stringB) {
 
-stringA.replace(/\W/g, '')
-stringB.replace(/\W/g, '')
-stringA.toLowerCase();
-stringB.toLowerCase();
+firstString = stringA.toLowerCase().replace(/\W/g, '');
+secondString = stringB.toLowerCase().replace(/\W/g, '');
 stringA.split(' ').join('')
 stringB.split(' ').join('')
+console.log(firstString);
+console.log(secondString);
 
 let charMap = {};
 
-for(let char of stringA){
+for(let char of firstString){
   if(!charMap[char]){
     charMap[char] = 1;
   } else {
@@ -27,7 +27,7 @@ for(let char of stringA){
   }
 }
 
-for(let char of stringB){
+for(let char of secondString){
 if(!charMap[char]){
   return "Not an Anagram";
 } else {
@@ -42,6 +42,8 @@ for(let char in charMap){
     "No Anagram here."
   }
 }
+
+
 
 
 }
